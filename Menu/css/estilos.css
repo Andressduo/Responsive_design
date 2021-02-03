@@ -1,0 +1,114 @@
+body
+{
+
+    font-family: Arial, Helvetica, sans-serif, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+#menu ,#menu ul
+{
+margin: 0;
+padding:0;
+list-style: none;
+}
+#menu
+{
+    width: 90%;
+    margin: 60px auto;
+    border: 1px solid #107677;
+    background: #111;
+    background: linear-gradient(#2a4885,#577cc9 );      /*degradado*/
+    border-radius: 6px;
+    box-shadow: 0 2px 2px #ccc;             /*sombra*/
+
+}
+/*Para recetear el menu y margenes predeterminadas
+ usaremos codigo de nicholas gallangher clearflix*/
+#menu:before,
+#menu:after
+{
+content:  "";
+display: block;
+}
+#menu:after
+{
+    clear:both;
+}
+#menu li
+{
+    float:left;
+    border-right: 1px solid gray;
+    position: relative;
+}
+#menu a
+{
+    float:left;
+    padding: 12px 30px;
+    color:#fff;
+    text-decoration: nome;
+    text-transform:uppercase ;/*texto del menu principal en mayuscula*/
+    font:bold 12px Arial,Helvetica;
+     
+}
+#menu ul /*contiene los ul dentro de ul id menu*/
+{
+margin: 20px 0 0 0 ;
+opacity: 0;
+visibility: hidden;/*esconde los menus anidados*/ 
+position: absolute;
+top:38px;
+left:0px;
+z-index: 1;/*se superpone cuando otros elementos aparecen*/
+background:linear-gradient(#2a4885,#577cc9 );
+box-shadow: 0 -1px 0 rgba(255,255,255,0.3);
+border-radius: 3px;
+transition: all 0.2s ease-in-out;/*pequeño efectp al aparecer*/
+}
+
+#menu li:hover > ul /* todo ul dentro de li*/
+{
+opacity: 1;         
+visibility: visible; /*para mostrar listas anidadas*/
+margin: 0;
+}
+#menu ul ul
+{
+    top:0;
+    left:150px;
+    margin: 0 0 0 20px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.3);
+}
+#menu ul a /*para que se van bien las listas dentros de listas */
+{
+    padding: 10px;
+    width: 120px;
+    display: block;
+    white-space: nowrap;
+    float:none;
+    text-transform: none;
+    }
+#menu ul a:hover/*Etiqueteas cuando paso el mouse sobre ellas*/
+{
+background:linear-gradient(#2a4885,#577cc9 );
+}
+#menu ul  li:first-child > a:after/*flecha debajo cuando estamos sobre menu*/
+{
+    content: "";
+    position: absolute;
+    left: 40px;
+    top:-6px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #1ebdbe;
+}
+/*el de arriba hace referncia servicio por ejemplo este hace referecia a ul dentro de ul php python ruby
+por ejemplo*/
+#menu ul ul li:first-child > a:after
+{
+    left: -6px;
+    top:50%;
+    margin-top:-6px;
+    border-left: 0;
+    border-top: 6px solid transparent;
+    border-right: 6px solid #577cc9;
+    border-bottom: 6px solid transparent;
+}
