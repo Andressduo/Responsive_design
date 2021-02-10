@@ -5,6 +5,20 @@
 <meta charset="utf-8" />
 <link href="css/estilos.css" rel="stylesheet" 
       type="text/CSS">
+<!-- Añadimos las librerias de google cde Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script>
+    /* añadimos efecto de resorte contraccion en el menu */
+    $(document).ready(function()
+    {
+        $("#Menu-principal").prepend('<div id="menu-entrada">Menu</div>');
+        $("#menu-entrada").on("click", function()
+            {
+                $("#menu").slideToggle();
+            }) ;   
+    });
+   
+</script>
 
 
 </head>
